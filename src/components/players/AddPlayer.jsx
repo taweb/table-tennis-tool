@@ -8,12 +8,21 @@ class AddPlayer extends Component {
 		this.state = {
 			value: ""
 		}
+		this.onSubmit = this.onSubmit.bind(this);
 	}
 
 	onChange(e) {
 		this.setState({
 			value: e.target.value,
 		});
+	}
+
+	onSubmit(e) {
+		e.preventDefault();
+		this.props.submitPlayer({name: this.state.value})
+		this.setState({
+			value: ""
+		})
 	}
 
 	render() {

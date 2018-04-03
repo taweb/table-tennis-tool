@@ -6,7 +6,7 @@ const PlayerList = ({players}) => (
 		<ul>
 			{players.map((player, i) => {
 				// <PlayerItem key={player.id} player={player}/>
-				return <p>id: {player.id}, player: {player.name}</p>
+				return <p key={player.id}>id: {player.id}, player: {player.name}</p>
 			})}
 		</ul>
 	</div>

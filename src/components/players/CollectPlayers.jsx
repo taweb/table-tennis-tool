@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import AddPlayer from './AddPlayer';
+import AddPlayer from '../../containers/players/AddPlayer';
 import PlayerList from '../../containers/players/PlayerList';
 
 const CollectPlayers = () => (
