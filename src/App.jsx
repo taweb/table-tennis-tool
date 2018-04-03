@@ -6,6 +6,10 @@ import {
     Switch,
 } from "react-router-dom";
 
+import FourOhFour from './components/FourOhFour';
+import CollectPlayers from './components/players/CollectPlayers';
+import ShowTournament from './components/tournament/ShowTournament';
+
 import './App.css';
 
 const App = () => (
