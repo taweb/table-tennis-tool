@@ -5,3 +5,17 @@ export const addPlayer = player => {
 		player: player
 	}
 }
+
+export const editPlayer = player => {
+	return {
+		type: 'editPlayer',
+		player: player
+	}
+}
+
+export const deletePlayer = player => {
+	return {
+		type: 'deletePlayer',
+		player: player
+	}
+}

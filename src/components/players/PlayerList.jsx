@@ -1,12 +1,12 @@
 import React from 'react';
+import PlayerItem from '../../containers/players/PlayerItem';
 
 const PlayerList = ({players}) => (
 	<div>
 		<h2>Players</h2>
 		<ul>
 			{players.map((player, i) => {
-				// <PlayerItem key={player.id} player={player}/>
-				return <p key={player.id}>id: {player.id}, player: {player.name}</p>
+				return <PlayerItem key={player.id} player={player} />
 			})}
 		</ul>
 	</div>
