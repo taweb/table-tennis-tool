@@ -1,16 +1,20 @@
+// imports
 import React, { Component } from "react";
 import Input from './Input';
 
 class AddPlayer extends Component {
 	constructor(props) {
 		super(props);
-		this.onChange = this.onChange.bind(this);
+		// react state to track input value
 		this.state = {
 			value: ""
 		}
 		this.onSubmit = this.onSubmit.bind(this);
+		this.onChange = this.onChange.bind(this);
+
 	}
 
+	// setting state when user types
 	onChange(e) {
 		this.setState({
 			value: e.target.value,
@@ -18,8 +22,10 @@ class AddPlayer extends Component {
 	}
 
 	onSubmit(e) {
+		// preventing page reload when form submitted
 		e.preventDefault();
 		this.props.submitPlayer({name: this.state.value})
+		// setting the input value back to blank string when user adds a name
 		this.setState({
 			value: ""
 		})
