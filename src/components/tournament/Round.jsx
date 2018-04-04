@@ -9,7 +9,7 @@ class Round extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
-
+			winners: []
 		}
 	}
 
@@ -18,12 +18,20 @@ class Round extends Component {
 	// triggers action to set up the redux tournament state
 
 	render () {
-		console.log(this.props.round);
 
+		const {round} = this.props;
+		
+		let pairedArr = [];
+
+		for (let i = 0; i < round.length; i+=2) {
+			pairedArr.push(round.slice(i, i + 2));
+		}
+
+		// console.log(pairedArr);
 
 		return (
 		<div>
-					
+			
 		</div>
 		);
 	}
