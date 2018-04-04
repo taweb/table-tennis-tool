@@ -11,7 +11,7 @@ class Round extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
-			winners: []
+			winners: [] 
 		}
 	}
 
@@ -29,35 +29,16 @@ class Round extends Component {
 			pairedArr.push(round.slice(i, i + 2));
 		}
 
-		// console.log(pairedArr);
- 
-
-		// --------------------------------------------------------------------
-		// let playerPairs = [["Matt", "Steve"], ["Fred", "Jill"], ["Oli"]]
-
-		// const oneOrTheOther = arr => {
-
-		// 	const decisionArr = [];
-		// 	for(let i=0; i<arr.length; i++) {
-		// 		decisionArr.push(arr[i].length === 2 ? "pair" : "single")
-		// 	}
-
-		// 	return decisionArr;
-		// }
-
-		// console.log(oneOrTheOther(playerPairs));
-		// [ 'pair', 'pair', 'single' ]
-		// --------------------------------------------------------------------
-
 		return (
-		<div>
+		<div className="roundContainer">
+			<h3>{this.props.label}</h3>
 			{pairedArr.map((tie, i) => {
 				return tie.length===2 ?
 				<Match key={i} player1={tie[0]} player2={tie[1]} />
 				:
 				<Bye key={i} bye={tie[0]} />
 			})}
-			
+			<button className="roundButton">Move to next round</button>
 		</div>
 		);
 	}

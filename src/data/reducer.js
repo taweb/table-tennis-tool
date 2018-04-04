@@ -1,4 +1,4 @@
-let nextId = 2
+let nextId = 4;
 
 const addPlayer = (state, { player }) => {
 	let players = state.players.slice();
