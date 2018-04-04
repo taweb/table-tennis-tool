@@ -6,7 +6,7 @@ const addPlayer = (state, { player }) => {
 		id: nextId,
 		name: player.name
 	}
-	players.unshift(entry);
+	players.push(entry);
 	nextId++;
 	return {
 		players: players
@@ -32,32 +32,44 @@ const deletePlayer = (state, { player }) => {
 const generateTournament = (state, action) => {
 	// console.log("hello");
 	
-	let playerNames = state.players.map(player => player.name);
+	let playerEntrants = state.players.map(player => player.name);
+
+	let playersRandom = [];
+	let playerCount = playerEntrants.length;
+
+	while (playerCount > 0) {
+		let random = Math.floor(Math.random()*playerCount)
+		let randomPlayer = playerEntrants.splice(random, 1)[0];
+		playersRandom.push(randomPlayer);
+		playerCount--;
+	}
+
+
 	let structureArr = [];
-	let num = playerNames.length;
+	let num = playersRandom.length;
 
 	while(num >= 2) {
 		structureArr.push(num)
 		num = Math.ceil(num / 2);
 	}
 
-	console.log(structureArr);
+	// console.log(structureArr);
 
-// 	let calcstructure = arr => {
-// 	let newarr = [];
-// 	let num = arr.length;
+	let firstArr = [];
 
-// 	while(num >= 2) {
-// 		newarr.push(num)
+	firstArr.push(playersRandom);
 
-// 		num = Math.ceil(num / 2);
-// 	}
-
-// 	return newarr;
-// }
+	for(let i=1; i < structureArr.length; i++){
+		let roundArr = [];
+		for(let j=0; j<structureArr[i]; j++){
+			roundArr.push("");
+		}
+		firstArr.push(roundArr);
+	}
 
 	return {
-		...state
+		...state,
+		rounds: firstArr
 	}
 }
 
