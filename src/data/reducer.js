@@ -30,7 +30,32 @@ const deletePlayer = (state, { player }) => {
 }
 
 const generateTournament = (state, action) => {
-	console.log("hello");
+	// console.log("hello");
+	
+	let playerNames = state.players.map(player => player.name);
+	let structureArr = [];
+	let num = playerNames.length;
+
+	while(num >= 2) {
+		structureArr.push(num)
+		num = Math.ceil(num / 2);
+	}
+
+	console.log(structureArr);
+
+// 	let calcstructure = arr => {
+// 	let newarr = [];
+// 	let num = arr.length;
+
+// 	while(num >= 2) {
+// 		newarr.push(num)
+
+// 		num = Math.ceil(num / 2);
+// 	}
+
+// 	return newarr;
+// }
+
 	return {
 		...state
 	}
