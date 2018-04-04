@@ -48,7 +48,6 @@ const generateTournament = (state, action) => {
 		playersRandom.push(randomPlayer);
 		playerCount--;
 	}
-
 	// ---------------------------------------------------------------
 
 	
@@ -65,7 +64,6 @@ const generateTournament = (state, action) => {
 		// reassignment of num after push gets the players in the next tournament round, based on the current round
 		num = Math.ceil(num / 2);
 	}
-
 	// ---------------------------------------------------------------
 
 	// ---------------------------------------------------------------
