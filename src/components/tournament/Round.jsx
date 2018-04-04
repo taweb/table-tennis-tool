@@ -29,6 +29,24 @@ class Round extends Component {
 
 		// console.log(pairedArr);
 
+
+		// --------------------------------------------------------------------
+		// let playerPairs = [["Matt", "Steve"], ["Fred", "Jill"], ["Oli"]]
+
+		// const oneOrTheOther = arr => {
+
+		// 	const decisionArr = [];
+		// 	for(let i=0; i<arr.length; i++) {
+		// 		decisionArr.push(arr[i].length === 2 ? "pair" : "single")
+		// 	}
+
+		// 	return decisionArr;
+		// }
+
+		// console.log(oneOrTheOther(playerPairs));
+		// [ 'pair', 'pair', 'single' ]
+		// --------------------------------------------------------------------
+
 		return (
 		<div>
 			
