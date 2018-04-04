@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-// import AddPlayer from '../../containers/players/AddPlayer';
+import Match from './Match';
+import Bye from './Bye';
+
 // import PlayerList from '../../components/players/PlayerList';
 
 // main player entry page
@@ -28,7 +30,7 @@ class Round extends Component {
 		}
 
 		// console.log(pairedArr);
-
+ 
 
 		// --------------------------------------------------------------------
 		// let playerPairs = [["Matt", "Steve"], ["Fred", "Jill"], ["Oli"]]
@@ -49,6 +51,12 @@ class Round extends Component {
 
 		return (
 		<div>
+			{pairedArr.map((tie, i) => {
+				return tie.length===2 ?
+				<Match key={i} player1={tie[0]} player2={tie[1]} />
+				:
+				<Bye key={i} bye={tie[0]} />
+			})}
 			
 		</div>
 		);
