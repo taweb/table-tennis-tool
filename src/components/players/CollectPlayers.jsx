@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import AddPlayer from '../../containers/players/AddPlayer';
 import PlayerList from '../../components/players/PlayerList';
 
+// main player entry page
 class CollectPlayers extends Component {
 
 	constructor(props) {
@@ -11,6 +12,7 @@ class CollectPlayers extends Component {
 		this.onClick = this.onClick.bind(this);
 	}
 
+	// triggers action to set up the redux tournament state
 	onClick() {
 		this.props.genTournament();
 	}

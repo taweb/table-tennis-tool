@@ -30,13 +30,18 @@ const deletePlayer = (state, { player }) => {
 }
 
 const generateTournament = (state, action) => {
-	// console.log("hello");
 	
+	// collect array of player inputs from user
 	let playerEntrants = state.players.map(player => player.name);
 
+	// ---------------------------------------------------------------
+	// creating array of entrants in a random order
+	
+	// create new array to push players into in a random order
 	let playersRandom = [];
 	let playerCount = playerEntrants.length;
 
+	// while still players left in the original player array, pick a random index number, remove player at that index number, and push into the new array
 	while (playerCount > 0) {
 		let random = Math.floor(Math.random()*playerCount)
 		let randomPlayer = playerEntrants.splice(random, 1)[0];
@@ -44,32 +49,44 @@ const generateTournament = (state, action) => {
 		playerCount--;
 	}
 
+	// ---------------------------------------------------------------
+
+	
+	// ---------------------------------------------------------------
+	// creating structure array to help generate redux tournament state
+	// length of structure array relates to the number of rounds in tournament, the number stored in each refers to number of players in that round
 
 	let structureArr = [];
 	let num = playersRandom.length;
 
+	// while 2 or more players, push into structure array
 	while(num >= 2) {
 		structureArr.push(num)
+		// reassignment of num after push gets the players in the next tournament round, based on the current round
 		num = Math.ceil(num / 2);
 	}
 
-	// console.log(structureArr);
+	// ---------------------------------------------------------------
 
-	let firstArr = [];
+	// ---------------------------------------------------------------
+	// Creating initial Tournament array, with first round players populated
 
-	firstArr.push(playersRandom);
+	let initialTournamentArr = [];
+
+	initialTournamentArr.push(playersRandom);
 
 	for(let i=1; i < structureArr.length; i++){
 		let roundArr = [];
 		for(let j=0; j<structureArr[i]; j++){
 			roundArr.push("");
 		}
-		firstArr.push(roundArr);
+		initialTournamentArr.push(roundArr);
 	}
+	// --------------------------------------------------------------
 
 	return {
 		...state,
-		rounds: firstArr
+		rounds: initialTournamentArr
 	}
 }
 
