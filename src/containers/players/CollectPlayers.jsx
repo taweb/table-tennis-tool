@@ -1,11 +1,18 @@
 import { connect } from "react-redux";
 import CollectPlayers from '../../components/players/CollectPlayers';
+import { generateTournament } from '../../data/actions/state'; 
 
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { 
 	return {
 		players: state.players,
 	} 
 }
 
-export default connect(mapStateToProps)(CollectPlayers);
+const mapDispatchToProps = dispatch => {
+	return {
+		genTournament: () => dispatch(generateTournament()),
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CollectPlayers);
