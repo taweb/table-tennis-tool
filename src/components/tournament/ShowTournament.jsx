@@ -7,6 +7,7 @@ const ShowTournament = ({rounds}) => {
 	let labelArr = [];
 
 	// logic to create array of labels to be used for rendering titles of rounds (if Quarter-Final, Semi-Final, Final)
+	// eslint-disable-next-line
 	rounds !== undefined ?
 		rounds.map((item, i) => {
 			let label = "";
@@ -19,7 +20,7 @@ const ShowTournament = ({rounds}) => {
 		})
 	:
 	null;
- 
+
 	return (
 		<div className="drawContainer">
 			{rounds === undefined ?

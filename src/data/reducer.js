@@ -9,7 +9,7 @@ const addPlayer = (state, { player }) => {
 	players.push(entry);
 	nextId++;
 	return {
-		players: players
+		players: players,
 	}
 }
 
@@ -18,14 +18,13 @@ const editPlayer = (state, { player }) => {
 	players.map(item => item.id===player.id ? item.name = player.name : item.name)
 	return {
 		players: players,
-		...state
 	}
 }
 
 const deletePlayer = (state, { player }) => {
 	let players = state.players.slice();
 	return {
-		players: players.filter(item => item.id !== player.id)
+		players: players.filter(item => item.id !== player.id),
 	} 
 }
 
