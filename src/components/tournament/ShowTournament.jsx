@@ -15,10 +15,10 @@ const ShowTournament = ({rounds}) => {
 			label = item.length === 2 ? "Final" : item.length <= 4 ? "Semi-Final" : "Quarter-Final"
 			:
 			label = "Round " + (i + 1);
-			labelArr.push(label);
+			return labelArr.push(label);
 		})
 	:
-	null
+	null;
  
 	return (
 		<div className="drawContainer">

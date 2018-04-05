@@ -58,12 +58,26 @@ const generateTournament = (state, action) => {
 	let structureArr = [];
 	let num = playersRandom.length;
 
-	// while 2 or more players, push into structure array
-	while(num >= 2) {
-		structureArr.push(num)
-		// reassignment of num after push gets the players in the next tournament round, based on the current round
-		num = Math.ceil(num / 2);
+	structureArr.push(num);
+
+	let square = 0;
+	let exp = 0;
+
+	while (square < num){
+		exp++;
+		square = Math.pow(2, exp)
 	}
+
+	let resultSquare = square/2;
+
+	// while 2 or more players, push into structure array
+	while(resultSquare >= 2) {
+		structureArr.push(resultSquare);
+		// reassignment of num after push gets the players in the next tournament round, based on the current round
+		resultSquare = resultSquare / 2;
+	}
+
+
 	// ---------------------------------------------------------------
 
 	// ---------------------------------------------------------------
