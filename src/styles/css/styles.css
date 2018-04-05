@@ -1,0 +1,8 @@
+.drawContainer {
+  display: flex;
+  justify-content: space-evenly; }
+
+.roundContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; }

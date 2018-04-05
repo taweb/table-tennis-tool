@@ -1,7 +1,8 @@
-let nextId = 2
+let nextId = 4;
 
 const addPlayer = (state, { player }) => {
 	let players = state.players.slice();
+	// set up new player object to be added to state
 	let entry = {
 		id: nextId,
 		name: player.name
@@ -9,23 +10,23 @@ const addPlayer = (state, { player }) => {
 	players.push(entry);
 	nextId++;
 	return {
-		players: players
+		players: players,
 	}
 }
 
 const editPlayer = (state, { player }) => {
 	let players = state.players.slice();
+	// map through players, if matching id, update the name
 	players.map(item => item.id===player.id ? item.name = player.name : item.name)
 	return {
 		players: players,
-		...state
 	}
 }
 
 const deletePlayer = (state, { player }) => {
 	let players = state.players.slice();
 	return {
-		players: players.filter(item => item.id !== player.id)
+		players: players.filter(item => item.id !== player.id),
 	} 
 }
 
@@ -41,7 +42,7 @@ const generateTournament = (state, action) => {
 	let playersRandom = [];
 	let playerCount = playerEntrants.length;
 
-	// while still players left in the original player array, pick a random index number, remove player at that index number, and push into the new array
+	// get a random player from the playerEntrants array, push into playersRandom array 
 	while (playerCount > 0) {
 		let random = Math.floor(Math.random()*playerCount)
 		let randomPlayer = playerEntrants.splice(random, 1)[0];
@@ -53,16 +54,32 @@ const generateTournament = (state, action) => {
 	
 	// ---------------------------------------------------------------
 	// creating structure array to help generate redux tournament state
-	// length of structure array relates to the number of rounds in tournament, the number stored in each refers to number of players in that round
+	// length of structure array relates to the number of rounds in tournament
+	// the number stored in each array index refers to number of players in that round.
 
 	let structureArr = [];
 	let num = playersRandom.length;
 
-	// while 2 or more players, push into structure array
-	while(num >= 2) {
-		structureArr.push(num)
-		// reassignment of num after push gets the players in the next tournament round, based on the current round
-		num = Math.ceil(num / 2);
+	// the first entry in the structure array is the number of players entered by the user
+	structureArr.push(num);
+
+	let nextLargestSquare = 0;
+	let exp = 0;
+
+	// get the next power of 2 number which is greater than the number of players entered by user
+	// eg. if 14 players entered, the while loop will return a result of 16 
+	while (nextLargestSquare < num){
+		exp++;
+		nextLargestSquare = Math.pow(2, exp)
+	}
+
+	// second round will always have power2 number of players which is smaller than first round
+	let nextSmallestSquare = nextLargestSquare/2;
+
+	// for second round onwards until final, push in decreasing powers of 2 into structure array
+	while(nextSmallestSquare >= 2) {
+		structureArr.push(nextSmallestSquare);
+		nextSmallestSquare = nextSmallestSquare / 2;
 	}
 	// ---------------------------------------------------------------
 
@@ -73,6 +90,7 @@ const generateTournament = (state, action) => {
 
 	initialTournamentArr.push(playersRandom);
 
+	// generating nested array of tournament rounds in redux state, with "" initially
 	for(let i=1; i < structureArr.length; i++){
 		let roundArr = [];
 		for(let j=0; j<structureArr[i]; j++){

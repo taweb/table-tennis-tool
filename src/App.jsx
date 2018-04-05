@@ -8,7 +8,7 @@ import {
 
 import FourOhFour from './components/FourOhFour';
 import CollectPlayers from './containers/players/CollectPlayers';
-import ShowTournament from './components/tournament/ShowTournament';
+import ShowTournament from './containers/tournament/ShowTournament';
 
 import './App.css';
 
