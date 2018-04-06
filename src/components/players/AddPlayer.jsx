@@ -40,7 +40,7 @@ class AddPlayer extends Component {
 
 			this.setState({
 				value: invalid ? currentValue : "",
-				error: invalid ? true : false
+				error: invalid
 			})
 	}
 

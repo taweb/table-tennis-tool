@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from './Input';
+import DisplayError from './DisplayError';
 
 class PlayerItem extends Component {
 	constructor(props){
@@ -8,13 +9,15 @@ class PlayerItem extends Component {
 			// editing state keeps track of if player item can be edited, used to display either form or li in render
 			editing: false,
 			// keeps track of player item input value when being edited
-			value: ""
+			value: "",
+			error: false
 		}
 		// bind methods
 		this.onChange=this.onChange.bind(this);
 		this.onEdit=this.onEdit.bind(this);
 		this.onSubmit=this.onSubmit.bind(this);
 		this.onDelete=this.onDelete.bind(this);
+		this.onUndo=this.onUndo.bind(this);
 	}
 
 	// setting local state as user types player name
@@ -39,32 +42,55 @@ class PlayerItem extends Component {
 		})
 	}
 
-	// when form submitted, editing state set back to false again and calls container method to dispatch an edit player action to the reducer
-	onSubmit(e) {
-		e.preventDefault();
+	onUndo() {
 		this.setState({
 			editing: false
 		})
- 		this.props.editPlayer({
- 			id: this.props.player.id,
- 			name: this.state.value
- 		})
 	}
 
+	// when form submitted
+	onSubmit(e) {
+		// preventing page reload when form submitted
+		e.preventDefault();
+		let currentValue = this.state.value.trim();
+
+		const invalid = this.props.players.reduce((acc, item) => {
+			return item.name === currentValue ? acc = true : acc
+		}, false)
+
+		invalid ?
+			null
+			:
+			this.props.editPlayer({
+	 			id: this.props.player.id,
+	 			name: currentValue
+	 		})
+
+		this.setState({
+			editing: invalid,
+			error: invalid
+		})
+	}
 
 	render() {
 		return (
 			<div>
 				{this.state.editing ?
-				<form onSubmit={this.onSubmit}>
-					<Input onChange={this.onChange} value={this.state.value} />
-					<button disabled={this.state.value.length < 3}>Save</button>
-				</form> 
+				<div>
+					<form onSubmit={this.onSubmit}>
+						<Input onChange={this.onChange} value={this.state.value} />
+						<button disabled={this.state.value.length < 3}>Save</button>
+					</form> 
+					{this.state.error === true ?
+						<DisplayError error="Please provide an alternative unique name, or press cancel to undo name edit" /> : null
+					}
+					<button onClick={this.onUndo}>Cancel</button>
+				</div>
 				:
 				<div>
-				<li>{this.props.player.name}</li>
-				<button onClick={this.onEdit}>Edit</button>
-				<button onClick={this.onDelete}>Delete</button>
+					<li>{this.props.player.name}</li>
+					<button onClick={this.onEdit}>Edit</button>
+					<button onClick={this.onDelete}>Delete</button>
 				</div>
 			}
 			</div>
