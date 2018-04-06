@@ -7,7 +7,8 @@ class AddPlayer extends Component {
 		super(props);
 		// react state to track input value
 		this.state = {
-			value: ""
+			value: "",
+			error: false  
 		}
 		// bind methods
 		this.onSubmit = this.onSubmit.bind(this);
@@ -25,6 +26,16 @@ class AddPlayer extends Component {
 	onSubmit(e) {
 		// preventing page reload when form submitted
 		e.preventDefault();
+
+		let invalid = this.props.players.reduce((acc, item) => {
+			return item.name === this.state.value ? acc = true : acc
+		}, false)
+
+		invalid ?
+			this.setState({
+				error: true
+			})
+		:
 		this.props.submitPlayer({name: this.state.value})
 		// setting the input value back to empty string when user adds a name
 		this.setState({

@@ -24,7 +24,7 @@ class CollectPlayers extends Component {
 				<Link to={"/tournament"}>Tournament</Link>
 			</p>
 			<p>Please add at least 4 players below to begin</p>
-			<AddPlayer />
+			<AddPlayer players={this.props.players}/>
 			<PlayerList players={this.props.players}/>
 			{this.props.players.length >= 4 ?
 				<Link to={"/tournament"}>
