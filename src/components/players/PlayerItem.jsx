@@ -44,7 +44,8 @@ class PlayerItem extends Component {
 
 	onUndo() {
 		this.setState({
-			editing: false
+			editing: false,
+			error: false
 		})
 	}
 
