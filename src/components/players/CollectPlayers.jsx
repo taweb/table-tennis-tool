@@ -19,7 +19,7 @@ class CollectPlayers extends Component {
 
 	render () {
 		return (
-		<div>
+		<div className="container">
 			<p>
 				<Link to={"/tournament"}>Tournament</Link>
 			</p>

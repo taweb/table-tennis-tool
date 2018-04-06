@@ -22,7 +22,7 @@ const ShowTournament = ({rounds}) => {
 	null;
 
 	return (
-		<div className="drawContainer">
+		<div className="container">
 			{rounds === undefined ?
 				<div>
 					<p>It seems you have visited the tournament page prematurely, please follow the link and enter your team</p>

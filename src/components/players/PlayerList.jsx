@@ -3,7 +3,11 @@ import PlayerItem from '../../containers/players/PlayerItem';
 
 const PlayerList = ({players}) => (
 	<div>
-		<h2>Players</h2>
+		{players.length !== 0 ? 
+			<h2>Players</h2>
+			:
+			null
+		}
 		<ul>
 			{players.map((player, i) => {
 				return <PlayerItem key={player.id} player={player} players={players} />

@@ -1,4 +1,8 @@
 // import sass files for compile into styles.css file
 
+@import 'reset';
 @import 'variables';
+@import 'base';
 @import 'layout';
+@import 'header';
+@import 'footer';
