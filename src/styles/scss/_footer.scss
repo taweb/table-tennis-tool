@@ -9,6 +9,14 @@ footer {
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	
 
+	a {
+		text-decoration: none;
+		color: $light;
+
+		&:hover {
+			color: $light;
+			text-decoration: underline;
+		}
+	}
 }

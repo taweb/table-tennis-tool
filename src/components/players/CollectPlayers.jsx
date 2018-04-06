@@ -19,10 +19,8 @@ class CollectPlayers extends Component {
 
 	render () {
 		return (
-		<div className="container">
-			<p>
-				<Link to={"/tournament"}>Tournament</Link>
-			</p>
+		<div className={["container"]}>
+			<h2>Enter Your Players</h2>
 			<p>Please add at least 4 players below to begin</p>
 			<AddPlayer players={this.props.players}/>
 			<PlayerList players={this.props.players}/>
