@@ -3,7 +3,7 @@ import React from 'react';
 
 const DisplayError = ({error}) => (
 	<div>
-		<p>{error}</p>
+		<p className="error" >{error}</p>
 	</div>
 );
 

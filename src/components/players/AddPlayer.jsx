@@ -54,7 +54,7 @@ class AddPlayer extends Component {
 				<button className="button-add" disabled={this.state.value.length < 3}>Add</button> {/* the add player button only appears if the input name given is more than 3 characters long*/}
 			</form>
 			{this.state.error === true ?
-				<DisplayError error="The name must be unique, please try again" /> : null
+				<DisplayError error="Name already added, please enter a unique name" /> : null
 			}
 		</div>
 

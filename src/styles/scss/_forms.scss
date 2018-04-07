@@ -1,4 +1,3 @@
-
 input {
 	width: 300px;
 	font-size: 1.5rem;
@@ -9,4 +8,8 @@ input {
 	&:focus { 
 		outline: none;
 	}
+}
+
+.error {
+	color: $red-dark;
 }

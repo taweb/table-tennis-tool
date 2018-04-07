@@ -75,7 +75,7 @@ class PlayerItem extends Component {
  
 	render() {
 		return (
-			<div>
+			<div className="player-item">
 				{this.state.editing ?
 				<div>
 					<form onSubmit={this.onSubmit}>
@@ -89,7 +89,7 @@ class PlayerItem extends Component {
 				</div>
 				:
 				<div>
-					<li>{this.props.player.name}</li>
+					<li className="player-name">{this.props.player.name}</li>
 					<button className="button-edit" onClick={this.onEdit}>Edit</button>
 					<button className="button-delete" onClick={this.onDelete}>Delete</button>
 				</div>
