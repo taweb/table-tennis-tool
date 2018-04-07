@@ -4,7 +4,7 @@ import DisplayError from './DisplayError';
 
 class PlayerItem extends Component {
 	constructor(props){
-		super(props);
+		super(props); 
 		this.state = {
 			// editing state keeps track of if player item can be edited, used to display either form or li in render
 			editing: false,
@@ -70,28 +70,28 @@ class PlayerItem extends Component {
 		this.setState({
 			editing: invalid,
 			error: invalid
-		})
+		}) 
 	}
-
+ 
 	render() {
 		return (
 			<div>
 				{this.state.editing ?
 				<div>
 					<form onSubmit={this.onSubmit}>
-						<Input onChange={this.onChange} value={this.state.value} />
-						<button disabled={this.state.value.length < 3}>Save</button>
+						<Input onChange={this.onChange} value={this.state.value} /> <br />
+						<button className="button-save" disabled={this.state.value.length < 3}>Save</button>
 					</form> 
 					{this.state.error === true ?
 						<DisplayError error="Please provide an alternative unique name, or press cancel to undo name edit" /> : null
 					}
-					<button onClick={this.onUndo}>Cancel</button>
+					<button className="button-cancel" onClick={this.onUndo}>Cancel</button>
 				</div>
 				:
 				<div>
 					<li>{this.props.player.name}</li>
-					<button onClick={this.onEdit}>Edit</button>
-					<button onClick={this.onDelete}>Delete</button>
+					<button className="button-edit" onClick={this.onEdit}>Edit</button>
+					<button className="button-delete" onClick={this.onDelete}>Delete</button>
 				</div>
 			}
 			</div>
