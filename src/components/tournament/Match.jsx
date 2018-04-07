@@ -3,10 +3,18 @@ import React from 'react';
 const Match = ({player1, player2}) => { 
 
 	return (
-		<div className="match">
-			<p>{player1}</p>
+		<div className="tie">
+			{player1.length ? 
+				<p>{player1}</p>
+				:
+				<p className="player-tbc">TBC</p>
+			}	
 			<p className="match-vs">vs.</p>
-			<p>{player2}</p>
+			{player2.length ?
+				<p>{player2}</p>
+				:
+				<p className="player-tbc">TBC</p>
+			}
 		</div>
 	);
 }

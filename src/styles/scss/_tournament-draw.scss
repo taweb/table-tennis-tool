@@ -1,23 +1,29 @@
-.match {
+.tie {
 	background-color: $blue-dark;
 	margin: 10px;
-	width: 100px;
+	width: 300px;
 	border-radius: 5px;
 	display: content-box;
 	overflow: hidden; 
-	padding: $spacer-sml;
 	border: 2px solid $light;
 
 	p {
 		color: $light;
+		padding: $spacer-sml;
 	}
 
 	.match-vs {
 		font-size: 1.2rem;
+		background-color: $light;
+		color: $red-dark;
+		padding: 0px;
+	}
+
+	.player-tbc {
+		visibility: hidden;
 	}
 }
 
-// .player-name {
-// 	color: $light;
-// 	padding-top: $spacer-sml;	
-// }
+.bye-label {
+	background-color: $green-dark;
+}
