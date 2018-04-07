@@ -71,19 +71,22 @@ class PlayerItem extends Component {
 			editing: invalid,
 			error: invalid
 		}) 
-	}
+	} 
  
 	render() {
+
+ 
+
 		return (
 			<div className="player-item">
 				{this.state.editing ?
 				<div>
 					<form onSubmit={this.onSubmit}>
-						<Input onChange={this.onChange} value={this.state.value} /> <br />
+						<Input className="input-edit" onChange={this.onChange} value={this.state.value} /> <br />
 						<button className="button-save" disabled={this.state.value.length < 3}>Save</button>
 					</form> 
 					{this.state.error === true ?
-						<DisplayError error="Please provide an alternative unique name, or press cancel to undo name edit" /> : null
+						<DisplayError className="error-edit" error="Please provide an alternative unique name, or press cancel to undo name edit" /> : null
 					}
 					<button className="button-cancel" onClick={this.onUndo}>Cancel</button>
 				</div>
