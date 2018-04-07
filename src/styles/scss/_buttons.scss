@@ -11,11 +11,11 @@ button {
 	}
 }
 
-.button-add, .button-generate {
+.button-add, .button-generate, .button-nav {
 	font-size: 1.2rem;
 }
 
-.button-add {
+.button-add, .button-nav {
 	background-color: $blue-dark;
 	&:hover {
 		background-color: $blue-vdark;

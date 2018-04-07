@@ -57,7 +57,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-  padding: 15px 15px 90px; }
+  padding: 30px 15px 90px; }
 
 h2 {
   font-size: 2rem;
@@ -145,14 +145,14 @@ button {
   button:focus {
     outline: none; }
 
-.button-add, .button-generate {
+.button-add, .button-generate, .button-nav {
   font-size: 1.2rem; }
 
-.button-add {
+.button-add, .button-nav {
   background-color: #003366; }
-  .button-add:hover {
+  .button-add:hover, .button-nav:hover {
     background-color: #03072b; }
-  .button-add:disabled {
+  .button-add:disabled, .button-nav:disabled {
     background-color: #606060; }
 
 .button-save, .button-generate {
@@ -181,3 +181,17 @@ button {
 .player-name {
   color: #f5f5f5;
   padding-top: 7.5px; }
+
+.match {
+  background-color: #003366;
+  margin: 10px;
+  width: 100px;
+  border-radius: 5px;
+  display: content-box;
+  overflow: hidden;
+  padding: 7.5px;
+  border: 2px solid #f5f5f5; }
+  .match p {
+    color: #f5f5f5; }
+  .match .match-vs {
+    font-size: 1.2rem; }

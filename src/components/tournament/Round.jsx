@@ -64,7 +64,7 @@ class Round extends Component {
 				:
 				<Bye key={i} bye={tie[0]} />
 			})}
-			<button className="roundButton">Move to next round</button>
+			{/*<button className="roundButton">Move to next round</button>*/}
 		</div>
 		);
 	}

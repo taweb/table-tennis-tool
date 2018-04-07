@@ -1,0 +1,23 @@
+.match {
+	background-color: $blue-dark;
+	margin: 10px;
+	width: 100px;
+	border-radius: 5px;
+	display: content-box;
+	overflow: hidden; 
+	padding: $spacer-sml;
+	border: 2px solid $light;
+
+	p {
+		color: $light;
+	}
+
+	.match-vs {
+		font-size: 1.2rem;
+	}
+}
+
+// .player-name {
+// 	color: $light;
+// 	padding-top: $spacer-sml;	
+// }

@@ -3,7 +3,7 @@ import React from 'react';
 
 const DisplayError = ({className, error}) => (
 	<div>
-		<p className={"error", className} >{error}</p>
+		<p className={["error", className].join(' ')} >{error}</p>
 	</div>
 );
 
