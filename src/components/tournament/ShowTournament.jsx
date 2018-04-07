@@ -8,7 +8,7 @@ const ShowTournament = ({rounds}) => {
 
 	// logic to create array of labels to be used for rendering titles of rounds (if Quarter-Final, Semi-Final, Final)
 	// eslint-disable-next-line
-	rounds !== undefined ?
+	rounds !== undefined ? 
 		rounds.map((item, i) => {
 			let label = "";
 			let namedRound = item.length <= 8;
@@ -32,10 +32,14 @@ const ShowTournament = ({rounds}) => {
 					</Link>
 				</div>
 			:
-			rounds.map((round, i) => 
-				<Round label={labelArr[i]} key={i} round={round} />
-			)
-			
+			<div className="rounds-container">
+				{rounds.map((round, i) =>
+					<div className="round-container" key={i}>
+						<h3 className="round-title">{labelArr[i]}</h3>	
+						<Round className="round-ties" label={labelArr[i]} round={round} />
+					</div>
+				)}
+			</div>
 			}
 		</div>
 	);

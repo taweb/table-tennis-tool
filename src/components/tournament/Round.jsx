@@ -56,8 +56,7 @@ class Round extends Component {
 
 
 		return (
-		<div className="roundContainer">
-			<h3>{this.props.label}</h3>
+		<div>
 			{finalArr.map((tie, i) => {
 				return tie.length===2 ?
 				<Match key={i} player1={tie[0]} player2={tie[1]} />
