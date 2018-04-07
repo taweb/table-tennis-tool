@@ -159,6 +159,8 @@ button {
   background-color: #006600; }
   .button-save:hover, .button-generate:hover {
     background-color: #004c00; }
+  .button-save:disabled, .button-generate:disabled {
+    background-color: #606060; }
 
 .button-edit, .button-cancel {
   background-color: #cc5200; }

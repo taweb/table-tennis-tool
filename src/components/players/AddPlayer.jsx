@@ -20,7 +20,7 @@ class AddPlayer extends Component {
 	// setting local state as user types player name
 	onChange(e) {
 		this.setState({
-			value: e.target.value,
+			value: e.target.value
 		});
 	}
 
@@ -46,12 +46,16 @@ class AddPlayer extends Component {
 
 	render() {
 
+		// remove white space from beginning and end of string when checking length of input is valid (3 or more)
+		const string = this.state.value;
+		const stringNoSpace = string.trim();
+		const stringLength = stringNoSpace.length;
 
 		return (
 		<div>
 			<form onSubmit={this.onSubmit}>
 				<Input onChange={this.onChange} value={this.state.value} /> <br />
-				<button className="button-add" disabled={this.state.value.length < 3}>Add</button> {/* the add player button only appears if the input name given is more than 3 characters long*/}
+				<button className="button-add" disabled={stringLength < 3}>Add</button> {/* the add player button only appears if the input name given is more than 3 characters long*/}
 			</form>
 			{this.state.error === true ?
 				<DisplayError className="error-add" error="Name already added, please enter a unique name" /> : null

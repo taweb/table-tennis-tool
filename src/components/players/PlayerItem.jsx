@@ -75,7 +75,10 @@ class PlayerItem extends Component {
  
 	render() {
 
- 
+ 		// remove white space from beginning and end of string when checking length of input is valid (3 or more)
+		const string = this.state.value;
+		const stringNoSpace = string.trim();
+		const stringLength = stringNoSpace.stringLength;
 
 		return (
 			<div className="player-item">
