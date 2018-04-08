@@ -92,7 +92,7 @@ eg.
 
 This simplified the logic as the second round onwards always has a power of 2 number of players, down to 2 finalists.
 
-### Redux State
+### Redux State
 
 Having decided on a bye handling strategy I had a better idea of what the shape my redux state should be.
 
