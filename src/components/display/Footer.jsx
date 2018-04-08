@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 
+// Footer component to appear at bottom of each page
 const Footer = () => (
 	<div>
 		<footer>

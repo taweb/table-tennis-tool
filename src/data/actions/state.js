@@ -1,27 +1,26 @@
-
 export const addPlayer = player => {
 	return {
-		type: 'addPlayer',
+		type: "addPlayer",
 		player: player 
 	}
 }
 
 export const editPlayer = player => {
 	return {
-		type: 'editPlayer',
+		type: "editPlayer",
 		player: player
 	}
 }
 
 export const deletePlayer = player => {
 	return {
-		type: 'deletePlayer',
+		type: "deletePlayer",
 		player: player
 	}
 }
 
 export const generateTournament = () => {
 	return {
-		type: 'generateTournament'
+		type: "generateTournament"
 	}
 }
