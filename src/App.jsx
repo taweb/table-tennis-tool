@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
     BrowserRouter as Router,
@@ -6,14 +6,14 @@ import {
     Switch, 
 } from "react-router-dom";
 
-import FourOhFour from './components/FourOhFour';
-import CollectPlayers from './containers/players/CollectPlayers';
-import ShowTournament from './containers/tournament/ShowTournament';
-import Header from './components/display/Header';
-import Footer from './components/display/Footer';
+import FourOhFour from "./components/FourOhFour";
+import CollectPlayers from "./containers/players/CollectPlayers";
+import ShowTournament from "./containers/tournament/ShowTournament";
+import Header from "./components/display/Header";
+import Footer from "./components/display/Footer";
 
 
-import './App.css';
+import "./App.css";
 
 const App = () => (
   <Router>
@@ -22,6 +22,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={ CollectPlayers } />
         <Route exact path="/tournament" component={ ShowTournament } />
+        {/* default 404 component if path not found */}
         <Route component={ FourOhFour } />
       </Switch>
       <Footer />

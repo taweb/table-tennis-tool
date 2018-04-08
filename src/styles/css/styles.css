@@ -75,6 +75,10 @@ h2 {
 h3 {
   padding: 15px; }
 
+.four-oh-four {
+  text-align: center;
+  padding-top: 50px; }
+
 .rounds-container {
   display: flex;
   align-items: space-evenly;
@@ -140,9 +144,15 @@ input {
   border-radius: 5px; }
   input:focus {
     outline: none; }
+  @media only screen and (max-width: 400px) {
+    input {
+      width: 95%; } }
 
 .input-edit {
   border-radius: 0px; }
+  @media only screen and (max-width: 400px) {
+    .input-edit {
+      width: 300px; } }
 
 .error {
   color: #800000; }

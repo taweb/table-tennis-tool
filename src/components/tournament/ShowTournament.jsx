@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import Round from "./Round";
 
 const ShowTournament = ({rounds, genTournament}) => {
-
-	let labelArr = [];
-
+	// -------------------------------------------------------------
 	// logic to create array of labels to be used for rendering titles of rounds (if Quarter-Final, Semi-Final, Final)
+	let labelArr = [];
+	// next line results in a warning in console from eslint - attempted to resolve this warning - no impact on code when testing 
+	// "Expected an assignment or function call and instead saw an expression  no-unused-expressions" warning
 	// eslint-disable-next-line
 	rounds !== undefined ? 
 		rounds.map((item, i) => {
@@ -20,6 +21,7 @@ const ShowTournament = ({rounds, genTournament}) => {
 		})
 	:
 	null;
+	// ------------------------------------------------------------
 
 	return (
 		<div className="container">
@@ -32,8 +34,9 @@ const ShowTournament = ({rounds, genTournament}) => {
 					<button onClick={genTournament} className="button-shuffle">Shuffle Draw!</button>
 				</div> : null}
 			{rounds === undefined ?
+				// if user visits the tournament page directly first, display message and button to link to home
 				<div>
-					<p>It seems you have visited the tournament page prematurely, please follow the link and enter your team</p>
+					<p>It seems you have visited the tournament page prematurely, please follow the link below and enter your team</p>
 					<Link to={"/"}>
 						<button className="button-nav">Enter Your Players</button>
 					</Link>
@@ -48,7 +51,6 @@ const ShowTournament = ({rounds, genTournament}) => {
 				)}
 			</div>
 			}
-			
 		</div>
 	);
 }

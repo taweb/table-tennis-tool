@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
-import CollectPlayers from '../../components/players/CollectPlayers';
-import { generateTournament } from '../../data/actions/state'; 
-
+import CollectPlayers from "../../components/players/CollectPlayers";
+import { generateTournament } from "../../data/actions/state"; 
 
 const mapStateToProps = state => { 
 	return {

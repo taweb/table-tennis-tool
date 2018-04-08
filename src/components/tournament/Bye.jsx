@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Bye = ({bye}) => (
 	<div className="tie">
