@@ -6,4 +6,8 @@ header {
 	color: $light;
 	font-size: 2rem;
 	border-bottom: $spacer solid $light;
+	@media only screen and (max-width: 400px) {
+		font-size: 1.5rem; 
+		padding: $spacer-sml;
+	}
 }

@@ -23,7 +23,8 @@ class PlayerItem extends Component {
 	// setting local state as user types player name
 	onChange(e) {
 		this.setState({
-			value: e.target.value
+			value: e.target.value,
+			error: false
 		})
 	}
 

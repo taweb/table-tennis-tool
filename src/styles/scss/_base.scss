@@ -6,6 +6,9 @@ body {
 	background-color: $blue-light;
 	font-size: 1.5rem;
 	font-family: $main-font;
+	@media only screen and (max-width: 400px) {
+		font-size: 1.2rem; 
+	}
 
 } 
 
@@ -22,11 +25,17 @@ h2 {
 	font-family: $secondary-font;
 	padding: $spacer;
 
+	@media only screen and (max-width: 400px) {
+		font-size: 1.5rem; 
+		padding: $spacer-sml;
+	}
 }
 
 h3 {
 	padding: $spacer;
 }
+
+
 
 
 
