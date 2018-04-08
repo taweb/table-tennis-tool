@@ -19,16 +19,14 @@ class CollectPlayers extends Component {
 
 	render () {
 		return (
-		<div>
-			<p>
-				<Link to={"/tournament"}>Tournament</Link>
-			</p>
-			<p>Please add at least 4 players below to begin</p>
-			<AddPlayer />
+		<div className="container">
+			<h2>Enter Your Players</h2>
+			<h3>Please add at least 4 players below to begin</h3>
+			<AddPlayer players={this.props.players}/>
 			<PlayerList players={this.props.players}/>
 			{this.props.players.length >= 4 ?
 				<Link to={"/tournament"}>
-					<button onClick={this.onClick}>Generate Tournament!</button>
+					<button className="button-generate" onClick={this.onClick}>Generate Tournament!</button>
 				</Link> 
 				: null}
 		</div>

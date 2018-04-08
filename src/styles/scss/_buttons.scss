@@ -1,0 +1,54 @@
+
+button {
+	font-family: $main-font;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 2px;
+	border: none;
+	color: $light;
+	&:focus {
+		outline: none;
+	}
+} 
+
+.button-add, .button-generate, .button-nav {
+	font-size: 1.2rem;
+}
+
+.button-add, .button-nav {
+	background-color: $blue-dark;
+	&:hover {
+		background-color: $blue-vdark;
+	}
+	&:disabled {
+		background-color: $grey;
+	}
+}
+
+.button-save, .button-generate {
+	background-color: $green-dark;
+	&:hover {
+		background-color: $green-vdark;
+	}
+	&:disabled {
+		background-color: $grey;
+	}
+}
+
+.button-edit, .button-cancel, .button-shuffle {
+	background-color: $orange-dark;
+	&:hover {
+		background-color: $orange-vdark;
+	}
+
+}
+.button-delete {
+	background-color: $red-dark;
+	&:hover {
+		background-color: $red-vdark;
+	}
+}
+
+.button-shuffle {
+	font-size: 1.2rem;
+}

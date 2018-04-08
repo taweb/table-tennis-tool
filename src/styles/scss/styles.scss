@@ -1,4 +1,13 @@
 // import sass files for compile into styles.css file
 
+@import 'reset';
 @import 'variables';
+@import 'base';
 @import 'layout';
+@import 'header';
+@import 'footer';
+@import 'forms';
+@import 'buttons';
+@import 'player-list';
+@import 'tournament-draw';
+

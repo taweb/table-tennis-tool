@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import ShowTournament from '../../components/tournament/ShowTournament';
+import { generateTournament } from '../../data/actions/state'; 
+
 
 const mapStateToProps = state => { 
 	return {
@@ -7,4 +9,10 @@ const mapStateToProps = state => {
 	} 
 }
 
-export default connect(mapStateToProps)(ShowTournament);
+const mapDispatchToProps = dispatch => {
+	return {
+		genTournament: () => dispatch(generateTournament()),
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShowTournament);

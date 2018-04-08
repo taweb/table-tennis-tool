@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Bye = ({bye}) => (
-	<div>
-		<h3>Bye</h3>
+	<div className="tie">
+		<p className="bye-label">Bye</p> 
 		<p>{bye}</p>
 	</div>
 );
