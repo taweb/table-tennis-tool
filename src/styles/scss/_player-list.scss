@@ -1,0 +1,13 @@
+.player-item {
+	background-color: $blue-dark;
+	margin: 10px;
+	width: 300px;
+	border-radius: 5px;
+	display: content-box;
+	overflow: hidden;
+}
+
+.player-name {
+	color: $light;
+	padding-top: $spacer-sml;	
+}

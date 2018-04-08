@@ -1,9 +1,9 @@
 import React from 'react';
 // import PlayerItem from '../../containers/players/PlayerItem';
 
-const DisplayError = ({error}) => (
+const DisplayError = ({className, error}) => (
 	<div>
-		<p>{error}</p>
+		<p className={["error", className].join(' ')} >{error}</p>
 	</div>
 );
 

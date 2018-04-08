@@ -1,0 +1,22 @@
+footer {
+	background-color: $blue-dark;
+	text-align: center;
+	padding: $spacer;
+	font-family: $secondary-font;
+	color: $light;
+	font-size: 1rem;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+
+	a {
+		text-decoration: none;
+		color: $light;
+
+		&:hover {
+			color: $light;
+			text-decoration: underline;
+		}
+	}
+}

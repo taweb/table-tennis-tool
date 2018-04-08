@@ -1,0 +1,13 @@
+header {
+	background-color: $blue-dark;
+	text-align: center;
+	padding: $spacer;
+	font-family: $secondary-font;
+	color: $light;
+	font-size: 2rem;
+	border-bottom: $spacer solid $light;
+	@media only screen and (max-width: 400px) {
+		font-size: 1.5rem; 
+		padding: $spacer-sml;
+	}
+}

@@ -1,0 +1,45 @@
+.tie {
+	background-color: $blue-dark;
+	margin: 10px;
+	width: 200px;
+	height: 100px;
+	border-radius: 5px;
+	display: content-box;
+	overflow: hidden; 
+	border: 2px solid $light;
+
+	p {
+		color: $light;
+		padding: $spacer-sml;
+	}
+
+	.match-vs {
+		font-size: 1.2rem;
+		background-color: $light;
+		color: $red-dark;
+		padding: 0px;
+	}
+
+	.player-tbc {
+		visibility: hidden;
+	}
+}
+
+
+
+.bye-label {
+	background-color: $green-dark;
+	border-bottom: 20px solid $light;
+}
+
+.round-title {
+	@media only screen and (min-width: 1091px) {
+		align-self: center;
+		position: absolute;
+		top: 215px;
+	}
+}
+
+.round-ties {
+	justify-self: center;
+}

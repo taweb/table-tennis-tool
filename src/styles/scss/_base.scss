@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $blue-light;
+	font-size: 1.5rem;
+	font-family: $main-font;
+	@media only screen and (max-width: 400px) {
+		font-size: 1.2rem; 
+	}
+
+} 
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	padding: $spacer-2 $spacer $spacer-6; 
+}
+
+h2 {
+	font-size: 2rem;
+	color: $red-dark;
+	font-family: $secondary-font;
+	padding: $spacer;
+
+	@media only screen and (max-width: 400px) {
+		font-size: 1.5rem; 
+		padding: $spacer-sml;
+	}
+}
+
+h3 {
+	padding: $spacer;
+}
+
+
+
+
+
