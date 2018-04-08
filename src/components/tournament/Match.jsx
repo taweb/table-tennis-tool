@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 const Match = ({player1, player2}) => { 
-
 	return (
 		<div className="tie">
 			{player1.length ? 

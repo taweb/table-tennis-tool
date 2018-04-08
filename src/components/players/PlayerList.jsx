@@ -1,5 +1,5 @@
-import React from 'react';
-import PlayerItem from '../../containers/players/PlayerItem';
+import React from "react";
+import PlayerItem from "../../containers/players/PlayerItem";
 
 const PlayerList = ({players}) => (
 	<div>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 
+// Header component to appear at the top of each page
 const Header = () => (
 	<div>
 		<header>

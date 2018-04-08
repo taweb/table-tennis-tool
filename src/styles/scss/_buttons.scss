@@ -1,4 +1,4 @@
-
+// button styles
 button {
 	font-family: $main-font;
 	padding: 5px;
@@ -42,6 +42,7 @@ button {
 	}
 
 }
+
 .button-delete {
 	background-color: $red-dark;
 	&:hover {
