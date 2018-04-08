@@ -22,7 +22,7 @@ The exercise is to create a tool which randomly creates pairings for a table ten
 - ability to record scores for each player, or mark which player won from each pairing, to create the next round of the tournament playoffs
 - continued rounds until the final (last 2 players who have won all matches to date play each other)
 
-## Chosen Technologies
+## Chosen Technologies
 
 I used React and Redux to build my app as I found these technologies very interesting and challenging during the course, and because I felt they fitted well with the project brief, especially for the rendering of the tournament structure and the UI elements.
 
