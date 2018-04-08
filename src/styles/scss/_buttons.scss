@@ -35,7 +35,7 @@ button {
 	}
 }
 
-.button-edit, .button-cancel {
+.button-edit, .button-cancel, .button-shuffle {
 	background-color: $orange-dark;
 	&:hover {
 		background-color: $orange-vdark;
@@ -47,4 +47,8 @@ button {
 	&:hover {
 		background-color: $red-vdark;
 	}
+}
+
+.button-shuffle {
+	font-size: 1.2rem;
 }

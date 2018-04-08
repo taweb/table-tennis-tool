@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Round from "./Round";
 
-const ShowTournament = ({rounds}) => {
+const ShowTournament = ({rounds, genTournament}) => {
 
 	let labelArr = [];
 
@@ -24,6 +24,13 @@ const ShowTournament = ({rounds}) => {
 	return (
 		<div className="container">
 			<h2>Your Tournament Draw</h2>
+			{rounds !== undefined ?
+				<div>
+					<Link to={"/"}>
+						<button className="button-nav">Return to home</button>
+					</Link>
+					<button onClick={genTournament} className="button-shuffle">Shuffle Draw!</button>
+				</div> : null}
 			{rounds === undefined ?
 				<div>
 					<p>It seems you have visited the tournament page prematurely, please follow the link and enter your team</p>
@@ -41,6 +48,7 @@ const ShowTournament = ({rounds}) => {
 				)}
 			</div>
 			}
+			
 		</div>
 	);
 }
